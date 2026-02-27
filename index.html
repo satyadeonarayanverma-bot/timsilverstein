@@ -2062,17 +2062,25 @@
     
     
     <style>
-        #vapt-section {
+                #vapt-section {
             background-color: #0a0a0a !important;
             color: #ffffff;
             padding: 80px 20px 100px;
             font-family: 'Inter', sans-serif;
             position: relative;
             overflow: hidden;
+            width: 100vw !important;
+            left: 50%;
+            right: 50%;
+            margin-left: -50vw !important;
+            margin-right: -50vw !important;
+            box-sizing: border-box;
         }
         #vapt-section::before { display: none; }
         .vapt-wrapper {
             max-width: 1400px;
+            width: 100%;
+            padding: 0 15px;
             margin: 0 auto;
             position: relative;
             z-index: 2;
