@@ -708,7 +708,19 @@
             }
         }
     </style>
+    
+    <!-- Unified Section Backgrounds -->
+    <style id="unified-section-bg">
+        body, #page, .site-content, .elementor-section, .e-con, section, .futurio-content {
+            background-color: #0a0a0a !important;
+        }
+        /* Override elementor gradient backgrounds which use background-image */
+        .e-con.e-parent:not([data-settings*="video"]) {
+            background-image: none !important;
+        }
+    </style>
     </head>
+        
     
 
 <body
@@ -1252,7 +1264,7 @@
 
 										<style>
 											.why-choose-section {
-												background: radial-gradient(circle at top, #060B19 0%, #02040A 100%);
+												background-color: #0a0a0a !important;
 												position: relative;
 												padding: 100px 20px 80px;
 												color: #fff;
@@ -1729,7 +1741,7 @@
 
 										<style>
 											.industries-section {
-												background: radial-gradient(circle at bottom, #0B1D3A 0%, #030A16 100%);
+												background-color: #0a0a0a !important;
 												padding: 100px 20px;
 												color: #fff;
 												font-family: inherit;
@@ -2051,24 +2063,14 @@
     
     <style>
         #vapt-section {
-            background: radial-gradient(circle at 50% -20%, #0d2b63 0%, #010613 70%);
+            background-color: #0a0a0a !important;
             color: #ffffff;
             padding: 80px 20px 100px;
             font-family: 'Inter', sans-serif;
             position: relative;
             overflow: hidden;
         }
-        #vapt-section::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background-image: 
-                linear-gradient(rgba(0, 150, 255, 0.03) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(0, 150, 255, 0.03) 1px, transparent 1px);
-            background-size: 30px 30px;
-            pointer-events: none;
-            z-index: 0;
-        }
+        #vapt-section::before { display: none; }
         .vapt-wrapper {
             max-width: 1400px;
             margin: 0 auto;
