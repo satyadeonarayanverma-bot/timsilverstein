@@ -241,7 +241,7 @@
         /* Branding at top of overlay */
         var brand = document.createElement('div');
         brand.id = 'mobile-nav-brand';
-        brand.innerHTML = '<span class="brand-main">TechFlow</span><span class="brand-accent">Solutions</span>';
+        brand.innerHTML = '<span class="brand-main">Cloudiva</span><span class="brand-accent">.ai</span>';
         overlay.appendChild(brand);
 
         /* Build menu items from existing nav */
