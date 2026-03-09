@@ -1020,6 +1020,7 @@
 				margin-bottom: 20px;
 				background: linear-gradient(135deg, #ffffff 0%, #94a3b8 100%);
 				-webkit-background-clip: text;
+				background-clip: text;
 				-webkit-text-fill-color: transparent;
 			}
 
@@ -1241,6 +1242,127 @@
 					font-size: 1.8rem;
 				}
 			}
+
+			/* SERVICE BUTTON GRID STYLES */
+			.service-section {
+				margin-top: 100px;
+				padding-top: 60px;
+				border-top: 1px solid rgba(255, 255, 255, 0.05);
+			}
+
+			.service-section-header {
+				text-align: center;
+				margin-bottom: 60px;
+				max-width: 900px;
+				margin-left: auto;
+				margin-right: auto;
+			}
+
+			.service-section-header h2 {
+				font-size: 3rem;
+				font-weight: 800;
+				margin-bottom: 20px;
+				background: linear-gradient(135deg, #fff 0%, #94a3b8 100%);
+				-webkit-background-clip: text;
+				background-clip: text;
+				-webkit-text-fill-color: transparent;
+			}
+
+			.service-section-header p {
+				font-size: 1.25rem;
+				color: #94a3b8;
+				line-height: 1.6;
+			}
+
+			.service-button-grid {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+				gap: 25px;
+			}
+
+			.service-btn-card {
+				display: block;
+				text-decoration: none !important;
+				background: rgba(15, 23, 42, 0.4);
+				border: 1px solid rgba(51, 161, 253, 0.1);
+				padding: 35px;
+				border-radius: 20px;
+				transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+				position: relative;
+				overflow: hidden;
+				height: 100%;
+			}
+
+			.service-btn-card::before {
+				content: '';
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				background: linear-gradient(135deg, rgba(51, 161, 253, 0.1) 0%, transparent 100%);
+				opacity: 0;
+				transition: opacity 0.4s ease;
+			}
+
+			.service-btn-card:hover {
+				transform: translateY(-8px);
+				border-color: var(--primary-blue);
+				background: rgba(15, 23, 42, 0.6);
+				box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 20px rgba(51, 161, 253, 0.1);
+			}
+
+			.service-btn-card:hover::before {
+				opacity: 1;
+			}
+
+			.service-btn-card h3 {
+				color: #fff;
+				font-size: 1.6rem;
+				font-weight: 700;
+				margin-bottom: 15px;
+				position: relative;
+				z-index: 1;
+			}
+
+			.service-btn-card p {
+				color: #94a3b8;
+				font-size: 1rem;
+				line-height: 1.6;
+				margin: 0;
+				position: relative;
+				z-index: 1;
+			}
+
+			.service-btn-card .arrow-icon {
+				position: absolute;
+				bottom: 25px;
+				right: 25px;
+				color: var(--primary-blue);
+				opacity: 0;
+				transform: translateX(-10px);
+				transition: all 0.3s ease;
+			}
+
+			.service-btn-card:hover .arrow-icon {
+				opacity: 1;
+				transform: translateX(0);
+			}
+
+			.branding-footer {
+				text-align: center;
+				margin-top: 120px;
+				padding: 40px;
+				border-top: 1px solid rgba(255, 255, 255, 0.05);
+				font-size: 1.1rem;
+				color: #64748b;
+				letter-spacing: 1px;
+			}
+
+			.branding-footer span {
+				color: var(--primary-blue);
+				font-weight: 600;
+			}
 		</style>
 
 		<main class="about-page-wrapper">
@@ -1253,7 +1375,7 @@
 
 				<div class="about-grid">
 
-					<!-- Row 1: Who We Are -->
+					<!-- Segment 1: Who We Are & What We Do -->
 					<div class="about-row">
 						<div class="glass-card">
 							<div class="icon-wrapper">
@@ -1261,7 +1383,7 @@
 									<path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
 								</svg>
 							</div>
-							<h2>Who We Are</h2>
+							<h2>About Us</h2>
 							<p><strong>Cloudiva.ai</strong> is an AI-Forward cloud consulting and platform engineering
 								company focused on helping organizations transform how they build, modernize, and
 								operate technology. We combine deep cloud architecture expertise with intelligent
@@ -1272,7 +1394,6 @@
 								accelerate innovation while maintaining governance and operational excellence.</p>
 						</div>
 
-						<!-- Removed empty visual feature block -->
 						<div class="glass-card">
 							<div class="icon-wrapper">
 								<svg viewBox="0 0 24 24">
@@ -1282,15 +1403,12 @@
 							<h2>What We Do</h2>
 							<p>We help organizations move from legacy complexity to intelligent cloud ecosystems —
 								delivering transformation across strategy, modernization, data foundations, and
-								operations.</p>
-							<p>From defining cloud roadmaps to building AI-ready platforms, our teams focus on practical
-								execution, measurable value, and long-term sustainability.</p>
+								operations. From defining cloud roadmaps to building AI-ready platforms, our teams focus
+								on practical execution, measurable value, and long-term sustainability.</p>
 						</div>
-
-						<!-- Removed empty visual feature block -->
 					</div>
 
-					<!-- Row 3: Our Philosophy -->
+					<!-- Segment 2: Philosophy & Why Us -->
 					<div class="about-row">
 						<div class="glass-card">
 							<div class="icon-wrapper">
@@ -1304,9 +1422,9 @@
 							</div>
 							<h2>Our Philosophy</h2>
 							<p>Technology transformation should not be driven by trends — it should be guided by
-								architecture, automation, and outcomes.</p>
-							<p>At Cloudiva.ai, we believe in building platforms that evolve with your business, enabling
-								teams to innovate faster while staying secure and cost-efficient.</p>
+								architecture, automation, and outcomes. At Cloudiva.ai, we believe in building platforms
+								that evolve with your business, enabling teams to innovate faster while staying secure
+								and cost-efficient.</p>
 						</div>
 
 						<div class="glass-card"
@@ -1318,10 +1436,95 @@
 							</div>
 							<h2>Why Cloudiva.ai</h2>
 							<p>We bring together cloud architects, engineers, and transformation specialists who
-								understand both enterprise complexity and modern innovation.</p>
-							<p>Our goal is simple — help organizations unlock the true potential of cloud and AI through
-								thoughtful design, strong governance, and intelligent engineering.</p>
+								understand both enterprise complexity and modern innovation. Our goal is simple — help
+								organizations unlock the true potential of cloud and AI through thoughtful design,
+								strong governance, and intelligent engineering.</p>
 						</div>
+					</div>
+
+					<!-- Cloud Transformation Services Section -->
+					<div class="service-section">
+						<div class="service-section-header">
+							<h2>Cloud Transformation Services</h2>
+							<p>End-to-end cloud transformation delivered through structured, outcome-driven services
+								that move organizations from legacy complexity to intelligent, scalable cloud
+								ecosystems.</p>
+						</div>
+						<div class="service-button-grid">
+							<a href="strategy-advisory.html" class="service-btn-card">
+								<h3>Strategy & Advisory</h3>
+								<p>We work with leadership and technical teams to define a clear, executable cloud
+									vision. Our advisory services cover cloud readiness assessments, roadmap design,
+									operating model transformation, and governance framework development.</p>
+								<div class="arrow-icon">→</div>
+							</a>
+							<a href="cloud-migration.html" class="service-btn-card">
+								<h3>Cloud Migration</h3>
+								<p>From application portfolio analysis to large-scale workload migration, we deliver
+									structured migration programs that minimize disruption and maximize speed.</p>
+								<div class="arrow-icon">→</div>
+							</a>
+							<a href="platform-modernization.html" class="service-btn-card">
+								<h3>Platform Modernization</h3>
+								<p>We modernize legacy platforms into cloud-native, composable architectures built for
+									scale and agility. Our modernization practice spans microservices, containerization,
+									and DevSecOps.</p>
+								<div class="arrow-icon">→</div>
+							</a>
+							<a href="managed-operations.html" class="service-btn-card">
+								<h3>Managed Operations</h3>
+								<p>Post-transformation, we provide intelligent managed operations that keep your cloud
+									environments optimized, secure, and cost-efficient.</p>
+								<div class="arrow-icon">→</div>
+							</a>
+						</div>
+					</div>
+
+					<!-- Security & Intelligent Protection Section -->
+					<div class="service-section">
+						<div class="service-section-header">
+							<h2>Security & Intelligent Protection</h2>
+							<p>At Cloudiva.ai, security is not a feature — it’s a foundational principle embedded across
+								every layer of your cloud platform.</p>
+						</div>
+						<div class="service-button-grid">
+							<a href="cloud-security-governance.html" class="service-btn-card">
+								<h3>Cloud Security & Governance</h3>
+								<p>Establish a robust cloud security posture grounded in policy, compliance, and
+									continuous governance within an auditable security boundary.</p>
+								<div class="arrow-icon">→</div>
+							</a>
+							<a href="security-architecture-protection.html" class="service-btn-card">
+								<h3>Security Architecture & Protection</h3>
+								<p>Design defense-in-depth cloud environments covering network segmentation, zero-trust,
+									and data encryption strategies.</p>
+								<div class="arrow-icon">→</div>
+							</a>
+							<a href="intelligent-security-framework.html" class="service-btn-card">
+								<h3>Intelligent Security Framework</h3>
+								<p>AI-driven threat detection, behavioral analytics, and automated response capabilities
+									integrated into your cloud operations.</p>
+								<div class="arrow-icon">→</div>
+							</a>
+							<a href="modern-security-lifecycle.html" class="service-btn-card">
+								<h3>Modern Security Lifecycle</h3>
+								<p>Embed security throughout the software delivery lifecycle — from infrastructure
+									templates to software supply chain protection.</p>
+								<div class="arrow-icon">→</div>
+							</a>
+							<a href="vapt-security-validation.html" class="service-btn-card">
+								<h3>VAPT & Security Validation</h3>
+								<p>Rigorous, structured security validation across cloud infrastructure, applications,
+									and APIs aligned to industry frameworks.</p>
+								<div class="arrow-icon">→</div>
+							</a>
+						</div>
+					</div>
+
+					<!-- Bottom Branding -->
+					<div class="branding-footer">
+						Cloudiva.ai &nbsp; • &nbsp; <span>AI-Forward Cloud Consulting & Platform Engineering</span>
+						&nbsp; • &nbsp; www.cloudiva.ai
 					</div>
 
 				</div>
